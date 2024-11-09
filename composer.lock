@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b49dc643eb22dd90efb65d17f618b8a0",
+    "content-hash": "237231905b186f8dd5230496b8d88f73",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1157,6 +1157,54 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "ketili/fuzzydm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/goodot/fuzzy-dm.git",
+                "reference": "7448ea65807644d805dcfcc2828bf424d2792313"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/goodot/fuzzy-dm/zipball/7448ea65807644d805dcfcc2828bf424d2792313",
+                "reference": "7448ea65807644d805dcfcc2828bf424d2792313",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ketili\\": "src",
+                    "ketili\\membership\\": "src/membership",
+                    "ketili\\aggregation\\": "src/aggregation",
+                    "ketili\\membership\\polygon\\": "src/membership/polygon",
+                    "ketili\\membership\\sigmoid\\": "src/membership/sigmoid"
+                },
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Goderdzi Jobadze",
+                    "email": "goderdzi.jobadze@gmail.com"
+                }
+            ],
+            "description": "Fuzzy logic. Decision making lib",
+            "support": {
+                "issues": "https://github.com/goodot/fuzzy-dm/issues",
+                "source": "https://github.com/goodot/fuzzy-dm/tree/master"
+            },
+            "time": "2019-07-20T11:40:09+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -8391,7 +8439,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ketili/fuzzydm": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
