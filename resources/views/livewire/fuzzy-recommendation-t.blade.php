@@ -1,5 +1,5 @@
 <div class="p-6 bg-white border-b border-gray-200 rounded-lg shadow">
-    <h2 class="text-lg font-bold mb-4">Purchase Recommendation</h2>
+    <h2 class="text-lg font-bold mb-4">Recomendación de compra de Neumáticos</h2>
 
     <form wire:submit.prevent="getRecommendation">
         <!-- Barra Deslizante para Demanda -->
@@ -30,8 +30,10 @@
     <!-- Mostrar el Resultado -->
     @if($recommendedScore)
         <div class="mt-4 p-4 bg-green-100 border border-green-300 rounded-lg">
-            <p class="text-green-700">Puntación: {{ round($recommendedScore * 100,2) }}%</p>
-            <p class="text-green-700">Recomendado: {{ $recommendedScore >= .5 ? 'SI' : 'NO' }}</p>
+            <p>
+                <strong style="color: {{ $recommendedScore >= .5 ? 'green' : 'red' }}" class="">Recomendado: {{ $recommendedScore >= .5 ? 'SI' : 'NO' }}</strong>
+            </p>
+            <small class="">Puntación: {{ round($recommendedScore * 100,2) }}%</small>
         </div>
     @endif
 </div>
