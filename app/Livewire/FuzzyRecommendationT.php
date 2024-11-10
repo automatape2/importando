@@ -30,25 +30,21 @@ class FuzzyRecommendationT extends Component
         $importCostFeature = new Feature('importCost', new Trimf(0, 0, 100));
         $expectedProfitMarginFeature = new Feature('expectedProfitMargin', new Trimf(0, 100, 100));
 
-        // Agregar las características al array de características
         $features = [
             $demandFeature,
             $importCostFeature,
             $expectedProfitMarginFeature
         ];
 
-        // Crear el ítem con los valores proporcionados
         $item = new Item('purchase_recommendation', [
             'demand' => $this->demand,
             'importCost' => $this->importCost,
             'expectedProfitMargin' => $this->expectedProfitMargin,
         ]);
 
-        // Crear el analizador y calcular la recomendación
         $analyzer = new Analyzer($features, [$item], new ArithmeticMean());
         $analyzer->analyze();
 
-        // Obtener y guardar el puntaje recomendado
         $sorted = $analyzer->sort();
         $this->recommendedScore = $sorted[0]->score;
     }
