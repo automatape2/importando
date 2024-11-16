@@ -5,21 +5,21 @@
         <!-- Barra Deslizante para Demanda -->
         <div class="mb-4">
             <label for="demand" class="block text-gray-700">Demanda (0-100): <span class="font-bold">{{ $demand }}</span></label>
-            <input wire:model="demand" id="demand" type="range" min="0" max="100" step="1" class="w-full">
+            <input wire:model="demand" id="demand" type="range" min="0" max="100" step="20" class="w-full">
             @error('demand') <span class="text-red-500">{{ $message }}</span> @enderror
         </div>
 
         <!-- Barra Deslizante para Costo de Importación -->
         <div class="mb-4">
             <label for="importCost" class="block text-gray-700">Costo de Importacion (0-100): <span class="font-bold">{{ $importCost }}</span></label>
-            <input wire:model="importCost" id="importCost" type="range" min="0" max="100" step="1" class="w-full">
+            <input wire:model="importCost" id="importCost" type="range" min="0" max="100" step="20" class="w-full">
             @error('importCost') <span class="text-red-500">{{ $message }}</span> @enderror
         </div>
 
         <!-- Barra Deslizante para Margen de Ganancia Esperado -->
         <div class="mb-4">
             <label for="expectedProfitMargin" class="block text-gray-700">Margen Ganancia (0-100): <span class="font-bold">{{ $expectedProfitMargin }}</span></label>
-            <input wire:model="expectedProfitMargin" id="expectedProfitMargin" type="range" min="0" max="100" step="1" class="w-full">
+            <input wire:model="expectedProfitMargin" id="expectedProfitMargin" type="range" min="0" max="100" step="20" class="w-full">
             @error('expectedProfitMargin') <span class="text-red-500">{{ $message }}</span> @enderror
         </div>
 
@@ -29,11 +29,11 @@
 
     <!-- Mostrar el Resultado -->
     @if($recommendedScore)
-        <div class="mt-4 p-4 bg-green-100 border border-green-300 rounded-lg">
-            <p>
-                <strong style="color: {{ $recommendedScore >= .5 ? 'green' : 'red' }}" class="">Recomendado: {{ $recommendedScore >= .5 ? 'SI' : 'NO' }}</strong>
-            </p>
-            <small class="">Puntación: {{ round($recommendedScore * 100,2) }}%</small>
-        </div>
+    <div class="mt-4 p-4 bg-green-100 border border-green-300 rounded-lg">
+        <p>
+            <strong style="color: {{ $recommendedScore >= .5 ? 'green' : 'red' }}" class="">Recomendado: {{ $recommendedScore >= .5 ? 'SI' : 'NO' }}</strong>
+        </p>
+        <small class="">Puntación: {{ round($recommendedScore * 100,2) }}%</small>
+    </div>
     @endif
 </div>

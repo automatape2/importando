@@ -47,6 +47,8 @@ services:
     image: mariadb:lts-jammy
     volumes:
       - ./database/data:/var/lib/mysql
+    ports:
+      - "3307:3306"
     environment:
       MARIADB_DATABASE: ${DB_DATABASE}
       MARIADB_USER: ${DB_USERNAME}
