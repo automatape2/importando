@@ -1,6 +1,5 @@
 /.phpunit.cache
 /node_modules
-/deploy
 /deploy/database/data
 .env
 .env.backup
@@ -16,5 +15,4 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
-./deploy/*
-deploy
+
