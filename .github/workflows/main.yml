@@ -49,11 +49,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build Docker image
-        run: docker build -f deploy/Dockerfile -t janicama/importando:latest .
-
       - name: Log in to DockerHub
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
+      - name: Build Docker image
+        run: docker build -f deploy/Dockerfile -t janicama/importando:latest .
 
       - name: Push Docker image
         run: docker push janicama/importando:latest
