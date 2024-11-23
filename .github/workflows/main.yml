@@ -42,7 +42,7 @@ jobs:
 
 
   builDockerImage:
-    needs: sonarcloud
+    needs: sast
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
