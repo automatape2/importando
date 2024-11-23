@@ -16,5 +16,4 @@ yarn-error.log
 /.vscode
 /.zed
 
-deploy/database/data/aria_log_control
-deploy/database/data/aria_log_control
+/deploy
