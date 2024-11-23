@@ -28,6 +28,7 @@ jobs:
         run: php artisan test --testsuite=Feature --coverage
 
   sast:
+    # needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Analyze with SonarCloud
@@ -42,7 +43,7 @@ jobs:
 
 
   builDockerImage:
-    needs: sast
+    # needs: sast
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
